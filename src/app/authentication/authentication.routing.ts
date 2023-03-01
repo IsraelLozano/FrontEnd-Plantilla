@@ -1,0 +1,44 @@
+import { ChangePasswordViews } from './change-password/change-password.views';
+import { ConfirmComponent } from './confirm/confirm.component';
+import { Routes } from '@angular/router';
+
+import { ErrorComponent } from './error/error.component';
+import { ForgotComponent } from './forgot/forgot.component';
+import { LockscreenComponent } from './lockscreen/lockscreen.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+export const AuthenticationRoutes: Routes = [
+  {
+    path: '',
+    children: [
+      {
+        path: '404',
+        component: ErrorComponent,
+      },
+      {
+        path: 'forgot',
+        component: ForgotComponent,
+      },
+      {
+        path: 'lockscreen',
+        component: LockscreenComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'validate',
+        component: RegisterComponent,
+      },
+      {
+        path: 'confirm/:idPersona',
+        component: ConfirmComponent,
+      },
+      {
+        path: 'change-password',
+        component: ChangePasswordViews,
+      },
+    ],
+  },
+];
